@@ -385,6 +385,8 @@
                 <dict>
                     <key>AAPL,slot-name</key>
                     <string>Internal@0,31,3</string>
+                    <key>alc-delay</key>
+                    <integer>1000</integer>
                     <key>device_type</key>
                     <string>Audio device</string>
                     <key>hda-gfx</key>
@@ -416,34 +418,20 @@
                 </dict>
                 <key>PciRoot(0x0)/Pci(0x2,0x0)</key>
                 <dict>
+                    <key>AAPL,GfxYTile</key>
+                    <data>AQAAAA==</data>
                     <key>AAPL,ig-platform-id</key>
-                    <data>AAASGQ==</data>
+                    <data>AAASWQ==</data>
                     <key>AAPL,slot-name</key>
                     <string>Internal@0,2,0</string>
                     <key>device-id</key>
-                    <data>EhkAAA==</data>
+                    <data>ElkAAA==</data>
                     <key>device_type</key>
                     <string>Display controller</string>
                     <key>force-enable</key>
                     <data>AQAAAA==</data>
-                    <key>framabuffer-con1-alldata</key>
-                    <data>AQUJAAAEAACHAQAA</data>
-                    <key>framebuffer-con0-alldata</key>
-                    <data>/wAAAAAEAAAgAAAA</data>
-                    <key>framebuffer-con0-enable</key>
-                    <data>AQAAAA==</data>
-                    <key>framebuffer-con1-enable</key>
-                    <data>AQAAAA==</data>
-                    <key>framebuffer-con2-alldata</key>
-                    <data>AgQKAAAEAACHAQAA</data>
-                    <key>framebuffer-con2-enable</key>
-                    <data>AQAAAA==</data>
-                    <key>framebuffer-patch-enable</key>
-                    <data>AQAAAA==</data>
                     <key>hda-gfx</key>
                     <string>onboard-1</string>
-                    <key>model</key>
-                    <string>Intel HD Graphics 530</string>
                 </dict>
             </dict>
             <key>Delete</key>
@@ -500,24 +488,6 @@
                     <true/>
                     <key>ExecutablePath</key>
                     <string>Contents/MacOS/AppleALC</string>
-                    <key>MaxKernel</key>
-                    <string></string>
-                    <key>MinKernel</key>
-                    <string></string>
-                    <key>PlistPath</key>
-                    <string>Contents/Info.plist</string>
-                </dict>
-                <dict>
-                    <key>Arch</key>
-                    <string>Any</string>
-                    <key>BundlePath</key>
-                    <string>AirportItlwm.kext</string>
-                    <key>Comment</key>
-                    <string>V2.2.0 | 12.x</string>
-                    <key>Enabled</key>
-                    <true/>
-                    <key>ExecutablePath</key>
-                    <string>Contents/MacOS/AirportItlwm</string>
                     <key>MaxKernel</key>
                     <string></string>
                     <key>MinKernel</key>
@@ -705,6 +675,24 @@
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>Any</string>
+                    <key>BundlePath</key>
+                    <string>AirportItlwm.kext</string>
+                    <key>Comment</key>
+                    <string>V2.3.0</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/AirportItlwm</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
             </array>
             <key>Block</key>
             <array/>
@@ -730,7 +718,7 @@
                 <key>AppleCpuPmCfgLock</key>
                 <false/>
                 <key>AppleXcpmCfgLock</key>
-                <true/>
+                <false/>
                 <key>AppleXcpmExtraMsrs</key>
                 <false/>
                 <key>AppleXcpmForceBoost</key>
@@ -817,16 +805,16 @@
                 <key>PollAppleHotKeys</key>
                 <true/>
                 <key>ShowPicker</key>
-                <true/>
+                <false/>
                 <key>TakeoffDelay</key>
                 <integer>0</integer>
                 <key>Timeout</key>
-                <integer>3</integer>
+                <integer>0</integer>
             </dict>
             <key>Debug</key>
             <dict>
                 <key>AppleDebug</key>
-                <true/>
+                <false/>
                 <key>ApplePanic</key>
                 <true/>
                 <key>DisableWatchDog</key>
@@ -966,14 +954,12 @@
                 </dict>
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <dict>
-                    <key>#bluetoothExternalDongleFailed</key>
-                    <data>AA==</data>
-                    <key>#bluetoothInternalControllerInfo</key>
-                    <data>AAAAAAAAAAAAAAAAAAA=</data>
                     <key>ForceDisplayRotationInEFI</key>
                     <integer>0</integer>
+                    <key>SystemAudioVolume</key>
+                    <data>Rg==</data>
                     <key>boot-args</key>
-                    <string>debug=0x100 keepsyms=1 -v</string>
+                    <string>debug=0x100 keepsyms=1 swd_panic=1 agdpmod=vit9696 -noht40 -novht</string>
                     <key>csr-active-config</key>
                     <data>AAAAAA==</data>
                     <key>prev-lang:kbd</key>
@@ -990,8 +976,6 @@
                 </array>
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <array>
-                    <string>#bluetoothInternalControllerInfo</string>
-                    <string>#bluetoothExternalDongleFailed</string>
                     <string>boot-args</string>
                     <string>csr-active-config</string>
                 </array>
@@ -1026,7 +1010,7 @@
                 <key>SystemMemoryStatus</key>
                 <string>Upgradable</string>
                 <key>SystemProductName</key>
-                <string>iMac17,1</string>
+                <string>iMac18,1</string>
                 <key>SystemSerialNumber</key>
                 <string></string>
                 <key>SystemUUID</key>
@@ -1108,7 +1092,7 @@
                 <key>MinimumAudibleGain</key>
                 <integer>-128</integer>
                 <key>PlayChime</key>
-                <string>Auto</string>
+                <string>Enabled</string>
                 <key>ResetTrafficClass</key>
                 <false/>
                 <key>SetupDelay</key>
